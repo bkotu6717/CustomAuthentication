@@ -1,0 +1,19 @@
+<%= form_tag url: {controller: :users, action: :autocomplete_search_text}, method: :get do %>
+  <%= autocomplete_field_tag 'search', '', autocomplete_search_text_users_path, :size => 75 %>
+<% end %>
+
+<table class="table table-striped">
+	<thead>
+		<th> Email </th>
+		<th> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </th>
+	</thead>
+	<tbody>
+		<% @users.each do |user| %>
+			<tr>
+				<td> <%= user.email %></td> 
+				<td><%= link_to 'Edit', edit_user_path(user.id) %> | 
+					<%= link_to 'Delete', user_path(user), method: :delete, data: {confirm: true} %> </td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
