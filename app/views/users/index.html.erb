@@ -1,3 +1,11 @@
+<%= form_tag '#' do %>
+  <%= autocomplete_field_tag 'user_email', '', autocomplete_user_email_users_path, 'data-auto-focus' => true, :append_to => "#user_modal", size: 10, 'data-auto-focus' => true, placeholder: 'Search here', focus: true %>
+<% end %>
+
+<div id="user_modal">
+
+</div>
+
 <table class="table table-striped">
 	<thead>
 		<th> Email </th>
@@ -8,7 +16,7 @@
 			<tr>
 				<td> <%= user.email %></td> 
 				<td><%= link_to 'Edit', edit_user_path(user.id) %> | 
-					<%= link_to 'Delete', user_path(user), method: :delete, data: {confirm: true} %> </td>
+					<%= link_to 'Delete', user_path(user), method: :delete, data: {confirm: "Are you sure to delete this user?"} %> </td>
 			</tr>
 		<% end %>
 	</tbody>

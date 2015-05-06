@@ -7,6 +7,8 @@ gem 'rails', '3.2.20'
 
 gem 'sqlite3'
 gem "bcrypt-ruby", :require => "bcrypt"
+gem 'faker'
+
 
 
 # Gems used only for assets and not required
@@ -14,7 +16,7 @@ gem "bcrypt-ruby", :require => "bcrypt"
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'rails3-jquery-autocomplete'
+	gem 'rails3-jquery-autocomplete'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby

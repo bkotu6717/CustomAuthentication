@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 	before_filter :verify_user_status, except: [:create, :new]
-
+	autocomplete :user, :email, :full => true
+	
 	def index
 		@users = User.all
 	end
