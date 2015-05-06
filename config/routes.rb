@@ -3,9 +3,7 @@ CustomAuthentication::Application.routes.draw do
   get "log_in" => "sessions#new", :as => "log_in"
   get "sign_up" => "users#new", :as => "sign_up"
   root :to => "users#index"
-  resources :users do
-    post :autocomplete_search_text
-  end
+  resources :users
   resources :sessions
 
   # The priority is based upon order of creation:

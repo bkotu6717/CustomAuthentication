@@ -1,13 +1,8 @@
 class UsersController < ApplicationController
 	before_filter :verify_user_status, except: [:create, :new]
-	autocomplete :serach, :text
 
 	def index
 		@users = User.all
-	end
-
-	def autocomplete_search_text
-
 	end
 	
   def new
