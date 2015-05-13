@@ -1,6 +1,12 @@
-<%= form_tag '#' do %>
-  <%= autocomplete_field_tag 'user_email', '', autocomplete_user_email_users_path, 'data-auto-focus' => true, :append_to => "#user_modal", size: 10, 'data-auto-focus' => true, placeholder: 'Search here', focus: true %>
-<% end %>
+<div class="col-lg-12">
+	<%= form_tag '#' do %>
+	<span class="input-group-btn">
+	  <%= autocomplete_field_tag 'user_email', '', autocomplete_user_email_users_path, 'data-auto-focus' => true, 
+	  :append_to => "#user_modal", size: 10, class: 'form-control',
+	  'data-auto-focus' => true, placeholder: 'Search here' %>
+	</span>
+	<% end %>
+</div>
 
 <div id="user_modal">
 

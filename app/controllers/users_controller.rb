@@ -3,7 +3,8 @@ class UsersController < ApplicationController
 	autocomplete :user, :email, :full => true
 	
 	def index
-		@users = User.all
+		@users =  User.where('email not in (?)', current_user.email)
+
 	end
 	
   def new
@@ -48,7 +49,6 @@ class UsersController < ApplicationController
 
 	private
 		def verify_user_status
-			puts current_user.inspect
 			if !current_user.nil?
 				return true
 			else
