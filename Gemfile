@@ -9,6 +9,9 @@ gem 'sqlite3'
 gem "bcrypt-ruby", :require => "bcrypt"
 gem 'faker'
 
+group :production do
+  gem 'pg'
+end
 
 
 # Gems used only for assets and not required
